@@ -10,23 +10,24 @@ import NavTwo from '@c/navTwo/NavTwo';
 import Foot from '@c/footer/Footer';
 
 // 其余组件
-import SideBar from './SideBar';
+import AsideBar from './AsideBar';
 import Maga from './magazine';
 import Company from './company';
 import Media from './media';
 
 const PaperCateUi = (props) => {
+   // console.log(props)
    return (
       <Div>
          <Head></Head>
          <main className="container">
             <NavOne></NavOne>
             <NavTwo></NavTwo>
-            <SideBar></SideBar>
+            <AsideBar></AsideBar>
             <Div2>
-               <Maga></Maga>
-               <Company></Company>
-               <Media></Media>
+               <Maga cate={props && props.cate}></Maga>
+               <Company cate={props && props.cate}></Company>
+               <Media cate={props && props.cate}></Media>
             </Div2>
          </main>
          <Foot></Foot>
@@ -35,7 +36,7 @@ const PaperCateUi = (props) => {
 }
 // 函数式组件 绑定类型检查 
 PaperCateUi.propTypes = {
-   list: PropsTypes.array
+   cate: PropsTypes.array
 }
 
 export default PaperCateUi;

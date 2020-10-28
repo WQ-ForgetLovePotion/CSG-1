@@ -1,34 +1,27 @@
-import React, { PureComponent } from 'react';
+import React, { useEffect } from 'react';
 // 引入ui组件
 import PaperCateUi from '../ui/PaperCateUi';
 // 引入用户操作、react-redux的方法
-import { loadActionAsync } from '../actionCreator';
-import { connect } from 'react-redux';
+import { actionCreator as ac } from '../';
+import { useSelector, useDispatch } from 'react-redux';
 
-const mapState = state => ({
-   list: state.paperCate.list
-})
-const mapDispatch = dispatch => ({
-   renderData() {
-      dispatch(loadActionAsync())
-   }
-})
+// import useGetState from './useGetState';
 
-@connect(mapState, mapDispatch)
-class PaperCate extends PureComponent {
-   componentDidMount() {
-      this.props.renderData();
-   }
+const PaperCate = (props) => {
+   // react-redux下的 hooks
+   const cate = useSelector(state => state.paperCate.cate) 
+   const dispatch = useDispatch()
+   // console.log(cate)
 
-   componentDidUpdate() {
-      console.log(this.props.list);
-   }
+   // react下的 hook 执行异步操作
+   useEffect(() => {
+      dispatch(ac.loadActionAsync())
+   }, [dispatch])
 
-   render() {
-      return (
-         <PaperCateUi cate={this.props.list}></PaperCateUi>
-      )
-   }
+
+   return (
+      <PaperCateUi cate={cate}></PaperCateUi>
+   )
 }
 
 export default PaperCate;

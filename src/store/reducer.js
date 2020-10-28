@@ -7,5 +7,5 @@ import { reducer as paperCate} from '../home/paperCate';
 
 
 export default combineReducers({
-   paperCate
+   paperCate,
 })

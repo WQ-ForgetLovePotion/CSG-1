@@ -1,34 +1,73 @@
 import React, { PureComponent } from 'react';
 
-export default class Company extends PureComponent {
-   state = {
-      list: [
-         {"id": 0,"name": "光明日报报业集团", "paper": ["生活时报","文摘报","博览群书","中华读书报","书摘","考试"]},
-         {"id": 1,"name": "经济日报报业集团", "paper": ["名牌时报","中国花卉报","中国企业家","服装时报","中国经济信息"]},
-         {"id": 2,"name": "文汇-新民联合报业集团", "paper": ["文汇报","新民晚报"]},
-         {"id": 3,"name": "南方日报报业集团", "paper": ["南方周末","南方都市","花鸟世界"]},
-         {"id": 4,"name":  "广州日报报业集团", "paper": ["足球","广州文摘报"]},
-         {"id": 5,"name": "羊城晚报报业集团", "paper": ["羊城体育","新闻周刊新快报"]}                                   
-      ]
-   }
+import { connect } from 'react-redux';
+// import { useSelector, useDispatch } from 'react-redux';
+import { actionCreator as ac } from '../';
 
+// 函数组件 写法
+/* const Company = (props) => {
+   const cateSide = useSelector(state =>  state.paperCate.cateSide)
+   
+   const dispatch = useDispatch()
+   // react下的 hook
+   useEffect(() => {
+      dispatch(ac.changeAside(cateSide))
+   }, [])
+   // console.log(cateSide)
+
+   return (
+      <section className='cont cont-left l'>
+         <h2><span>报业集团</span></h2>
+         <ul>
+            {
+               props.cate[cateSide] && props.cate[cateSide].company.map(v =>
+                  <li key={v.companyId}>
+                     <div>{v.name}</div>
+                     <div>
+                        {
+                           v.paper.map(item =>
+                              <span key={item + 'yyj'}>{item}</span>
+                           )
+                        }
+                     </div>
+                  </li>
+               )
+            }
+         </ul>
+      </section>
+   )
+} */
+
+// 类组件写法
+@connect(
+   state => ({
+      cateSide: state.paperCate.cateSide
+   }),
+   dispatch => ({
+      renderSide(cateSide) {
+         dispatch(ac.changeAside(cateSide))
+      }
+   })
+)
+class Company extends PureComponent {
    render() {
+      let { cate, cateSide } = this.props;
       return (
          <section className='cont cont-left l'>
             <h2><span>报业集团</span></h2>
             <ul>
                {
-                  this.state.list.map(v=> 
-                     <li key={v.id}>
+                  cate[cateSide] && cate[cateSide].company.map(v =>
+                     <li key={v.companyId}>
                         <div>{v.name}</div>
                         <div>
                            {
-                              v.paper.map(item => 
-                                 <span key={item}>{item}</span>
+                              v.paper.map(item =>
+                                 <span key={item + 'yyj'}>{item}</span>
                               )
                            }
                         </div>
-                     </li>   
+                     </li>
                   )
                }
             </ul>
@@ -36,3 +75,6 @@ export default class Company extends PureComponent {
       )
    }
 }
+
+export default Company
+

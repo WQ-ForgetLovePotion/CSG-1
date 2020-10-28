@@ -140,12 +140,17 @@ a {
 }
 
 @font-face {
-   font-family: yofont;
-   src: url(//ss.qunarzz.com/yo/font/1.0.3/yofont.woff) format("woff"), url(//ss.qunarzz.com/yo/font/1.0.3/yofont.ttf) format("truetype");
+   font-family: iconfont;
+   src: url('//at.alicdn.com/t/font_2164627_ovq3f3qysco.eot');
+   src: url('//at.alicdn.com/t/font_2164627_ovq3f3qysco.eot?#iefix') format('embedded-opentype'),
+   url('//at.alicdn.com/t/font_2164627_ovq3f3qysco.woff2') format('woff2'),
+   url('//at.alicdn.com/t/font_2164627_ovq3f3qysco.woff') format('woff'),
+   url('//at.alicdn.com/t/font_2164627_ovq3f3qysco.ttf') format('truetype'),
+   url('//at.alicdn.com/t/font_2164627_ovq3f3qysco.svg#iconfont') format('svg');
 }
 
-.yo-ico {
-   font-family: yofont !important;
+.iconfont {
+   font-family: iconfont !important;
    font-style: normal;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;

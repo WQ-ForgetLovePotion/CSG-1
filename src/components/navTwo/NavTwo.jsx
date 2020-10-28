@@ -1,34 +1,47 @@
-import React, { PureComponent } from 'react';
+import React, { useCallback, useState } from 'react';
 
 import { Ul } from '@c/styleComp';
 
-export default class NavTwo extends PureComponent {
-   state = {
-      curIndex: 0,
-      text: ["分类浏览","在线图书馆","电子杂志","电子报刊","资料库","热门排行","精确搜索","我的书架","我的身份:贡士"]
-   }
+import { useHistory } from 'react-router-dom';
 
-   handleClick = index => {
+const NavTwo = props => {
+   const [curIndex, setcurIndex] = useState(0)
+   const [text] = useState([
+      { browse: "分类浏览" },
+      { online: "在线图书馆" },
+      { magazine: "电子杂志" },
+      { paper: "电子报刊" },
+      { database: "资料库" },
+      { rank: "热门排行" },
+      { search: "精确搜索" },
+      { bookshelf: "我的书架" },
+      { mine: "我的身份:贡士" }
+   ])
+
+   const history = useHistory()
+   const handleClick = useCallback((v, i) => {
       return () => {
-         this.setState({
-            curIndex: index
-         })
+         setcurIndex(i)
+         let secondPath = Object.keys(v)[0]
+         history.push(`/home/${secondPath}`)
+         console.log('点击:' + i) 
       }
-   }
+   }, [])
+   console.log('组件内的:' + curIndex)
 
-   render() {
-      return (
-         <Ul>
-            {
-               this.state.text.map((v, i) => 
-                  <li 
-                     key={i} 
-                     className={this.state.curIndex === i ? 'active': ''}
-                     onClick={this.handleClick(i)}
-                  >{v}</li>
-               )
-            }
-         </Ul>
-      )
-   }
+   return (
+      <Ul>
+         {
+            text.map((v, i) => {
+               return (<li 
+                  key={i} 
+                  className={curIndex === i ? 'active' : ''}
+                  onClick={handleClick(v, i)} 
+               >{v[Object.keys(v)]}</li>)
+            })
+         }
+      </Ul>
+   )
 }
+
+export default NavTwo

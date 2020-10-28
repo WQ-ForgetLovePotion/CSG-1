@@ -1,18 +1,25 @@
-import { LOADDATA } from './actionTypes'
+import { LOADDATA, CHANGECATESIDE } from './actionTypes';
 
 const defaultState = {
-  list: []
+   cate: [],
+   cateSide: 0
 }
 
 const reducer = (state = defaultState, action) => {
-  switch(action.type) {
-    case LOADDATA:
-      return {
-         list: action.list
-      }
-    default:
-      return state
-  }
+   switch (action.type) {
+      case LOADDATA:
+         return {
+            ...state,
+            cate: action.cate
+         }
+      case CHANGECATESIDE:
+         return {
+            ...state,
+            cateSide: action.cateSide
+         }
+      default:
+         return state
+   }
 }
 
 export default reducer;

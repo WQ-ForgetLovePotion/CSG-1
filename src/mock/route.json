@@ -1,4 +1,5 @@
 {
    "/api/cate": "/cate",
-   "/api/corr": "/corr"
+   "/api/corr": "/corr",
+   "/api/maga": "/maga"
 }
