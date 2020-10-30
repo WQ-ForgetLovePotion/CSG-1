@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 
 import {Header} from '@c/styleComp';
+import { withRouter } from 'react-router-dom';
 
 // export default (props) => {
 //    useCallback((btnType) => {
@@ -22,25 +23,27 @@ import {Header} from '@c/styleComp';
 //    )
 // }
 
-
-
-export default class Head extends PureComponent {
-
+class Head extends PureComponent {
+   
    handleClick(){
-
+      return () => {
+         // this.props.history('/login')
+      }
    }
    
    render() {
       return (
-         <Header style={{background: '#F5F5F5'}}>
+         <Header>
             <div className='container'>
                <section className="r">
-                  <span onClick={this.handleClick}>登录</span>
+                  <span onClick={this.handleClick()}>登录</span>
                   <i>|</i>
-                  <span onClick={this.handleClick}>注册</span>
+                  <span onClick={this.handleClick()}>注册</span>
                </section>
             </div>
          </Header>
       )
    }
 }
+
+export default withRouter(Head)

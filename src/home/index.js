@@ -1,6 +1,6 @@
-import HomeRouter from './HomeRouter';
+import TwoRouter from './TwoRouter';
 
 export {
-   HomeRouter
+   TwoRouter
 }
 

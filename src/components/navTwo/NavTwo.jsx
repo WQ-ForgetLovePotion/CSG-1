@@ -6,7 +6,8 @@ import { useHistory } from 'react-router-dom';
 
 const NavTwo = props => {
    const [curIndex, setcurIndex] = useState(0)
-   const [text] = useState([
+   const [text, setText] = useState([
+      // {id:0, path: '/home/browse', name:"分类浏览"}
       { browse: "分类浏览" },
       { online: "在线图书馆" },
       { magazine: "电子杂志" },
@@ -23,11 +24,13 @@ const NavTwo = props => {
       return () => {
          setcurIndex(i)
          let secondPath = Object.keys(v)[0]
+         console.log(secondPath);
          history.push(`/home/${secondPath}`)
-         console.log('点击:' + i) 
+  
+         // console.log('点击:' + i) 
       }
-   }, [])
-   console.log('组件内的:' + curIndex)
+   }, [history])
+   // console.log('组件:' + curIndex)
 
    return (
       <Ul>

@@ -18,7 +18,7 @@ const SearchRes = (props) => {
    // }, [searchCate])
 
    return (
-      <SearchResUi />
+      <SearchResUi {...props} />
    )
 }
 

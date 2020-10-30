@@ -4,6 +4,7 @@ const Header = styled.header`
    width: 100%;
    color: #999999;
    height: 30px;
+   background: #F5F5F5;
    >div {
       height: inherit;
    }
