@@ -5,7 +5,8 @@ import HomeUi from '../ui/HomeUi'
 import { Category } from '@/home/category/'
 import { OnlineLibrary } from '@/home/onlineLibrary/'
 import { MagazineNews } from '@/home/magazineNews/'
-import { MagazineCategory } from '@/home/magazineCategory'
+import { MagazineCategory } from '@/home/magazineCategory/'
+import { ShoppingCart } from '@/home/shoppingCart/'
 
 @withRouter
 class Home extends Component {
@@ -28,8 +29,9 @@ class Home extends Component {
         <Switch>
           <Route path='/home/category' component={Category}></Route>
           <Route path='/home/onlineLibrery' component={OnlineLibrary}></Route>
-          {/* <Route path='/home/magazine' component={MagazineNews}></Route> */}
-          <Route path='/home/magazine' component={MagazineCategory}></Route>
+          <Route path='/home/magazineNews' component={MagazineNews}></Route>
+          <Route path='/home/magazineCategory' component={MagazineCategory}></Route>
+          <Route path='/home/shoppingCart' component={ShoppingCart}></Route>
           <Redirect from='/home' to='/home/category'></Redirect>
         </Switch>
       </div>

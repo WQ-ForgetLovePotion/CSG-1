@@ -12,11 +12,17 @@ const HotRecommend = () => {
         <li>
           <img src="http://www.csg99.com/modules/article/images/nocover.jpg" alt=""/>
           <h3>登上封面</h3>
-          <p>
-                                GOAOI：以资讯见长的
-FHM其时在英国的销量
-稳居第一名。
-                            </p>
+          <p>GOAOI：以资讯见长的FHM其时在英国的销量稳居第一名。<span>更多{'>'}</span></p>
+        </li>
+        <li>
+          <img src="http://www.csg99.com/modules/article/images/nocover.jpg" alt=""/>
+          <h3>登上封面</h3>
+          <p>GOAOI：以资讯见长的FHM其时在英国的销量稳居第一名。<span>更多{'>'}</span></p>
+        </li>
+        <li>
+          <img src="http://www.csg99.com/modules/article/images/nocover.jpg" alt=""/>
+          <h3>登上封面</h3>
+          <p>GOAOI：以资讯见长的FHM其时在英国的销量稳居第一名。<span>更多{'>'}</span></p>
         </li>
       </ul>
     </HotRecommendWrap>

@@ -51,14 +51,19 @@ const PagerWrap = styled.div`
 `
 
 const HotRecommendWrap = styled.div`
-  width: 498px;
+  /* width: 498px; */
+  float: left;
   overflow: hidden;
-  background-color: #666;
   ul{
     margin-top: 26px;
     li{
       float: left;
       width: 143px;
+      margin-bottom: 50px;
+      margin-right: 35px;
+      &:last-child{
+        margin-right: 0;
+      }
       img{
         width: 143px;
         height: 143px;
@@ -68,12 +73,71 @@ const HotRecommendWrap = styled.div`
         text-align: center;
         font-size: 14px;
         color: #666;
+        margin-bottom: 10px;
       }
       p{
-        width: 100%;
+        width: 145px;
         line-height: 23px;
         font-size: 14px;
         color: #999;
+        span{
+          color: #319DF7;
+        }
+      }
+    }
+  }
+`
+
+const NewListWrap = styled.div`
+  width: 501px;
+  float: right;
+  .content{
+    margin-top: 26px;
+    padding-bottom: 21px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 16px;
+    overflow: hidden;
+    img{
+      width: 130px;
+      height: 130px;
+      float: left;
+    }
+    .new-right-content{
+      width: 350px;
+      float: right;
+      h3{
+        line-height: 32px;
+        height: 32px;
+        font-size: 16px;
+        color: #666;
+      }
+      p{
+        line-height: 24px;
+        font-size: 14px;
+        color: #999;
+        span{
+          color: #319DF7;
+        }
+      }
+    }
+  
+  
+  
+  }
+
+  ul{
+    li{
+      font-size: 14px;
+      color: #666;
+      overflow: hidden;
+      margin-bottom: 16px; 
+      p{
+        width: 437px;
+        float: left;
+      }
+      span{
+        color: #319DF7;
+        float: right;
       }
     }
   }
@@ -83,5 +147,6 @@ export {
   MagazineCategoryWrap,
   MagazineListWrap,
   PagerWrap,
-  HotRecommendWrap
+  HotRecommendWrap,
+  NewListWrap
 }
