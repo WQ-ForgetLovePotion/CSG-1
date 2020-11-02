@@ -24,12 +24,12 @@ const MinorNavWrap = styled.div`
             &:nth-child(7),:nth-child(8),:nth-child(9) {
                 border:none;
             }
-            /* &.active {
-                color: #319DF7;
-            } */
-            &:hover {
+            &.active {
                 color: #319DF7;
             }
+            /* &:hover {
+                color: #319DF7;
+            } */
         }
 
 `

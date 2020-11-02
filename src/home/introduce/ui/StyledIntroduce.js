@@ -1,30 +1,22 @@
 import styled from 'styled-components'
 import border from '@a/styled/border'
+import ellipsis from '@a/styled/ellipsis'
 
 const  Container = styled.div`
     width:100%;
-    main{
-        /* min-height:2000px; */
+    overflow-y:scroll;
+    main{ 
+        min-height:2500px;
         overflow-y:scroll; 
     }
     
-    /**/
-    /* display: flex;
-    flex-direction: column;
-    >main {
-        flex: 1;
-      
-    }  */
     
 `
 
 const TitleWraper = border(
         styled.div`
             width:100%;
-            /* border-bottom:1px solid #EEEEEE; */
-            /* border-bottom:1px solid #925; */
-            /* border-color:#000; */
-           
+          
             span{
                 /* width:100%; */
                 display:inline-block;
@@ -79,12 +71,12 @@ const DetailsWraper = styled.div`
 
         } */
         >div:nth-child(2){
-            background-color:#a41;
+            /* background-color:#a41; */
             width:100%;
             display:flex;
             margin-top:26px;
             >div:first-child{
-                background-color:#ccc;
+                /* background-color:#ccc; */
                 margin-right:36px;
                >div:first-child{
                     img{
@@ -112,7 +104,7 @@ const DetailsWraper = styled.div`
             >div:nth-child(2){
                 width:254px;
                 height:262px;
-                background-color:#836;
+                /* background-color:#836; */
                 line-height:30px;
                 font-size: 16px;
                 font-family: Microsoft YaHei;
@@ -206,7 +198,7 @@ const DetailsWraper = styled.div`
                         width:80px;
                         height:25px;
                         padding-left:10px;
-                        background-color:#f84;
+                        /* background-color:#f84; */
                         cursor: pointer;
                         svg{
                             padding-top:7px;
@@ -229,27 +221,30 @@ const DetailsWraper = styled.div`
            
 `
 
+const EllWraper = ellipsis(styled.div``)
+
 const BookIntroWraper =styled.div`
-        
         width:743px;
         margin-top:48px;
         margin-bottom:46px;
-        background-color:#356;
+        /* background-color:#356; */
         >div:nth-child(2){
             width:100%;
             margin-top:21px;
+            height:104px;
             line-height:26px;
             font-size: 14px;
             font-family: Microsoft YaHei;
             font-weight: 400;
+            overflow:hidden;
             color: #666666;
-            span{
-                margin-left:30px;
-                font-size: 14px;
-                font-family: Microsoft YaHei;
-                font-weight: 400;
-                color: #319DF7;
-            }
+        }
+        >div:nth-child(3){
+            float:right;
+            font-size: 14px;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color: #319DF7;
         }
 
 `
@@ -257,7 +252,7 @@ const AuthorIntroWraper =styled.div`
         width:743px;
         /* margin-top:48px; */
         margin-bottom:46px;
-        background-color:#356;
+        /* background-color:#356; */
         >div:nth-child(2){
             width:100%;
             margin-top:21px;
@@ -275,7 +270,7 @@ const BookMenuWraper = styled.div`
     width:742px;
     /* margin-top:48px; */
     padding-bottom:46px;
-    background-color:#354;
+    /* background-color:#354; */
     ul{
         width:800px;
         margin-top:21px;
@@ -287,21 +282,25 @@ const BookMenuWraper = styled.div`
         display:flex;
         flex-wrap:wrap;
         flex-direction: row;
-        background-color:#359;
+        overflow:hidden;
+        /* background-color:#359; */
         li{
             width:160px;
+            cursor: pointer;
+            &.active{
+                color: #319DF7;
+            }
         }
+        
         
     }  
     >div:last-child{
-        span{
-                float:right;
-                margin-top:20px;
-                font-size: 14px;
-                font-family: Microsoft YaHei;
-                font-weight: 400;
-                color: #319DF7;
-            }
+        float:right;
+        margin-top:10px;
+        font-size: 14px;
+        font-family: Microsoft YaHei;
+        font-weight: 400;
+        color: #319DF7;
     }
 
 `
@@ -312,13 +311,18 @@ const AlsoLoveWraper = styled.div`
         ul{
             display:flex;
             margin-top:26px;
-            background-color:#b98;
+            background-color:#58b;
+            overflow-x:scroll;
             li{
                 flex:1;
                 margin-right:48px;
                 div:first-child{
                     width:150px;
                     height:208px;
+                    image{
+                        display:block;
+                        width:inherit;
+                    }
                 }
                 div:last-child{
                     /* margin-top:21px; */
@@ -367,7 +371,7 @@ const ShortCommentsWraper = styled.div`
                 font-weight: 400;
                 color: #666666;
                 margin-right:32px;
-                background-color:#681;
+                /* background-color:#681; */
             }
             >span:nth-child(2){
                 line-height:40px;
@@ -375,7 +379,7 @@ const ShortCommentsWraper = styled.div`
                 font-family: Microsoft YaHei;
                 font-weight: 400;
                 color: #666666;
-                background-color:#689;
+                /* background-color:#689; */
                 
             }
             >span:nth-child(3){
@@ -385,7 +389,7 @@ const ShortCommentsWraper = styled.div`
                 font-family: Microsoft YaHei;
                 font-weight: 400;
                 color: #999999;
-                background-color:#668;
+                /* background-color:#668; */
             }
         }
         li:nth-child(3){
@@ -407,7 +411,7 @@ const ShortCommentsWraper = styled.div`
 `
 const LongCommentsWraper = styled.div`
     width:742px;
-    div:nth-child(2){
+    >div:nth-child(2){
         margin-top:5px;
         width:78px;
         height:28px;
@@ -423,9 +427,8 @@ const LongCommentsWraper = styled.div`
     >ul{
         clear:both;
         width:100%;
-        
         li{
-            background-color:#952;
+            /* background-color:#952; */
             /* display:flex; */
             width:100%;
             display:flex;
@@ -433,13 +436,15 @@ const LongCommentsWraper = styled.div`
             margin-bottom:33px;
             >div:first-child{
                 float:left;
-                background-color:#785;
+                /* background-color:#785; */
                 width:97px;
+                height:auto;
                 margin-right:13px;
                 margin-top:0px;
                 div{
                     height:106px;
                     width:100%;
+                    margin-top:0px;
                     img{
                         /* height:106px; */
                         width:100%;
@@ -459,7 +464,7 @@ const LongCommentsWraper = styled.div`
                 /* clear:left; */
                 width:100%;
                 flex:1;
-                background-color:#9d78;
+                /* background-color:#9d78; */
                 >span:nth-child(1){
                     float:left;
                     line-height:24px;
@@ -469,7 +474,7 @@ const LongCommentsWraper = styled.div`
                     color: #666666;
                     height:24px;
                     /* margin-right:32px; */
-                    background-color:#b569;
+                    /* background-color:#b569; */
                 }
                 >span:nth-child(2){
                     margin-left:64px;
@@ -480,7 +485,7 @@ const LongCommentsWraper = styled.div`
                     font-weight: 400;
                     color: #666666;
                     height:24px;
-                    background-color:#689;
+                    /* background-color:#689; */
                 }
                 >span:nth-child(3){
                     display:block;
@@ -490,7 +495,7 @@ const LongCommentsWraper = styled.div`
                     font-family: Microsoft YaHei;
                     font-weight: 400;
                     color: #999999;
-                    background-color:#668;
+                    /* background-color:#668; */
                     margin-top:30px;
                     margin-bottom:8px;
                     text-align: left;
@@ -506,7 +511,9 @@ const LongCommentsWraper = styled.div`
             }
         }
         div{
+            height:70px;
             margin-top:15px;
+            /* margin-bottom:50px; */
             span{
                 height:15px;
                 font-size: 14px;
@@ -536,11 +543,11 @@ const AboutBookWraper = styled.div`
             font-family: Microsoft YaHei;
             font-weight: 400;
             color: #666666;
-            background-color:#945;
+            /* background-color:#945; */
         }
         ul{
             text-align:center;
-            background-color:#895;
+            /* background-color:#895; */
             li{
                 /* padding-bottom:14px; */
                 height:26px;
@@ -576,11 +583,11 @@ const AboutBookWraper = styled.div`
             font-family: Microsoft YaHei;
             font-weight: 400;
             color: #666666;
-            background-color:#945;
+            /* background-color:#945; */
         }
         >div:nth-child(2){
             padding:0 37px;
-            background-color:#8256;
+            /* background-color:#8256; */
             .ant-col{
                 width:75px;
                 margin-right:15px;
@@ -633,11 +640,11 @@ const AboutBookWraper = styled.div`
             font-family: Microsoft YaHei;
             font-weight: 400;
             color: #666666;
-            background-color:#945;
+            /* background-color:#945; */
         }
         >div:nth-child(2){
             padding:0 37px;
-            background-color:#8256;
+            /* background-color:#8256; */
             .ant-col{
                 width:75px;
                 margin-right:15px;
@@ -690,7 +697,7 @@ const AboutBookWraper = styled.div`
             font-family: Microsoft YaHei;
             font-weight: 400;
             color: #666666;
-            background-color:#967;
+            /* background-color:#967; */
         }
         ul{
             margin-left:65px;
@@ -729,5 +736,6 @@ export {
     AlsoLoveWraper,
     ShortCommentsWraper,
     LongCommentsWraper,
-    AboutBookWraper
+    AboutBookWraper,
+    EllWraper
 }

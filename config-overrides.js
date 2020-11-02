@@ -1,9 +1,11 @@
 const path = require('path')
 
-const { override, 
-    fixBabelImports ,
-    addWebpackResolve,
-    addWebpackAlias,
+const {
+  override, 
+  fixBabelImports,
+  addWebpackResolve,
+  addWebpackAlias,
+  addDecoratorsLegacy
 } = require('customize-cra');
 
 module.exports = override(
@@ -23,4 +25,7 @@ module.exports = override(
     "@c": path.resolve(__dirname, 'src/components'),
     "@u": path.resolve(__dirname, 'src/utils')
   }),
+
+  //可以使用装饰器
+  addDecoratorsLegacy()
 );

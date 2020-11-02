@@ -1,5 +1,8 @@
 import React/* , { Component }  */from 'react';
 
+//公共组件
+
+
 import {
     TitleWraper,
     AboutBookWraper

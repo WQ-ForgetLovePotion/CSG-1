@@ -5,7 +5,7 @@ const HeaderWraper = styled.div`
     height:30px;
     background: #F5F5F5;
     .container{
-        background: #f99;
+        /* background: #f99; */
         height: 30px;
         color:#999;
         section{

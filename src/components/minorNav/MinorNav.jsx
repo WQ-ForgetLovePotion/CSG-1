@@ -1,42 +1,53 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom'
 
 import {
     MinorNavWrap
 } from './StyledMinorNav'
 
+
+@withRouter
 class MinorNav extends Component {
     state = {
         curIndex: 0,
-        minorNav: ["分类浏览","在线图书馆","电子杂志","电子报刊","资料库","热门排行","精确搜索","我的书架","我的身份:贡士"]
+        minorNav:
+        [
+            {id:0,path:'/introduce',name:'分类浏览'},
+            {id:1,path:'/shortcommentlists',name:'在线图书馆'},
+            {id:2,path:'/magintro',name:'电子杂志'},
+            {id:3,path:'/chapter',name:'电子报刊'},
+            {id:4,path:'/artcontent',name:'资料库'},
+            {id:5,path:'/rank',name:'热门排行'},
+            {id:6,path:'/magintro',name:'精确搜索'},
+            {id:7,path:'/shortcommentlists',name:'我的书架'},
+            {id:8,path:'/introduce',name:'我的身份:贡士'},
+        ]
      }
-     handleClick=()=>{
-        return(index)=>{
+     handleClick=(value)=>{
+        //  console.log(this.props)
+        let {history} = this.props
+        return()=>{
+            console.log(value.path)
+            console.log(value.id)
+            history.push('/home' + value.path)
             this.setState({
-                curIndex:index
+                curIndex:value.id
             })
         }
+        
      }
     render() {
         return (
             
                 <MinorNavWrap >
-                    {/* <li>分类浏览</li>
-                    <li>在线图书馆</li>
-                    <li>电子杂志</li>
-                    <li>电子报刊</li>
-                    <li>资料库</li>
-                    <li>热门排行</li>
-                    <li>精确搜索</li>
-                    <li>我的书架</li>
-                    <li>我的身份:贡士</li> */}
                     {
                         this.state.minorNav.map((value,index)=>{
                             return   (<li 
                                 key={index}
-                                onClick={this.handleClick(index)}
-                                // style={this.state.curIndex===index?color:" #319DF7":''}
+                                onClick={this.handleClick(value)}
+                                className={this.state.curIndex===value.id?'active':''}
                                 >
-                                {value}
+                                {value.name}
                                 </li>)
                             }
                         )

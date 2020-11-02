@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
-
+import {withRouter} from 'react-router-dom'
 
 import {
     HeaderWraper
 } from './StyledHeader'
 
+@withRouter
 class Header extends Component {
     handleClick = () => {
-        console.log('你好')
-    }
+        return()=>{
+            let { history } = this.props
+            history.push('/login')
+           
+        }
+    } 
     render() {
         return (
             <HeaderWraper>

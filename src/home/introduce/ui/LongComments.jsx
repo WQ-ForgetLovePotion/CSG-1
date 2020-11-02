@@ -1,5 +1,6 @@
 import React/* , { Component }  */from 'react';
 
+
 import {
     TitleWraper,
     LongCommentsWraper
@@ -12,7 +13,7 @@ const LongComments=()=> {
             < LongCommentsWraper>
                  <TitleWraper
                 width="0 0 1px 0"
-                // borderColor='#000'
+                // borderColor=' #000'
                 >
                     <span>长篇大论（{'>'}140字的评论）</span>
                 </TitleWraper>
@@ -22,7 +23,9 @@ const LongComments=()=> {
                 <ul>
                     <li>
                         <div>
-                            <div><img src={`${img}`} alt=""/></div>
+                            <div>
+                                <img src={`${img}`} alt=""/>
+                            </div>
                             <span>前端提升法宝</span>
                         </div>
                         <div >

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const MainNavWraper = styled.div`
     height: 95px;
     padding-top: 10px;
-    background-color:green;
+    /* background-color:green; */
     .l{
         width: 297px;
         height: 85px;    
@@ -24,13 +24,15 @@ const MainNavWraper = styled.div`
         text-align: center;
         li{
             flex: 1; 
-        }
-       li:hover {
-            background: #087AD9;
-            border-bottom: 2px solid #FBCF00;
             cursor: pointer;
-
+            &.active {
+                background: #087AD9;
+                border-bottom: 2px solid #FBCF00;
+                cursor: pointer;
+            }
         }
+        
+        
     }
     div:last-child{
         float: right;
@@ -60,7 +62,7 @@ const MainNavWraper = styled.div`
         }
     }    
         
-    }
+    
 `
 export {
     MainNavWraper
