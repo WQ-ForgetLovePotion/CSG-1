@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-import Com from './home/paperCate/container/PaperCate';
+import Home from './home/Home'
 
 export default class App extends Component {
    render() {
       return (
-         <Com></Com>
+         <Home></Home>
       )
    }
 }
