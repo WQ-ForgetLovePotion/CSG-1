@@ -1,16 +1,6 @@
 import styled from 'styled-components';
 import border from '@a/styled/border';
 
-const Div = styled.div`
-   height: 100%;
-   background: #fff;
-   display: flex;
-   flex-direction: column;
-   >main {
-      flex: 1;
-   }
-`
-
 const Title1 = border(
    styled.h2`
       width: 100%;
@@ -35,7 +25,6 @@ const Title2 = styled.h3`
 `
 
 export {
-   Div,
    Title1,
    Title2
 }

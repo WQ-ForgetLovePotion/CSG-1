@@ -12,7 +12,20 @@ const get = ({ url }) => {
    })
 }
 
+const post = ({ url }) => {
+   return new Promise((resolve, reject) => {
+      axios({
+         url
+      }).then(res => {
+         resolve(res);
+      }).then(error => {
+         reject(error);
+      })
+   })
+}
+
 
 export {
    get,
+   post
 }

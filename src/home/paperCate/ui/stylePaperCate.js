@@ -1,15 +1,5 @@
 import styled from 'styled-components';
 
-const Div = styled.div`
-   height: 100%;
-   background: #fff;
-   display: flex;
-   flex-direction: column;
-   >main {
-      flex: 1;
-   }
-`
-
 const SideBar = styled.ul`
    margin: 46px 0 60px 0;
    width: 140px;
@@ -142,7 +132,6 @@ const Div2 = styled.div`
 `
 
 export {
-   Div,
    SideBar,
    Div2
 }
